@@ -1,0 +1,16 @@
+[Unit]
+Description=TradeOgre Market Maker Bot
+After=network.target
+
+[Service]
+Type=simple
+User=YOUR_USERNAME
+WorkingDirectory=/path/to/tradeogrebot/tradeogre-bot
+ExecStart=/path/to/tradeogrebot/tradeogre-bot/tradeogre-env/bin/python /path/to/tradeogrebot/tradeogre-bot/market_maker_bot.py
+Restart=on-failure
+RestartSec=60
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
